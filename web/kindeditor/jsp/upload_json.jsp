@@ -1,19 +1,10 @@
-<%@page import="maosheji.core.front.SystemManager"%>
-<%@page import="com.alibaba.fastjson.JSONObject"%>
-<%@page import="org.slf4j.Logger"%>
-<%@page import="org.slf4j.LoggerFactory"%>
-<%@page import="maosheji.core.util.ImageUtils"%>
-<%@page import="maosheji.core.oss.OSSObjectSample"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@page import="maosheji.services.front.systemSetting.bean.SystemSetting"%>
-<%@page import="maosheji.core.ManageContainer"%>
+<%@page import="com.alibaba.fastjson.JSONObject"%>
 <%@ page import="java.util.*,java.io.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="org.apache.commons.fileupload.*" %>
 <%@ page import="org.apache.commons.fileupload.disk.*" %>
 <%@ page import="org.apache.commons.fileupload.servlet.*" %>
-
-<%-- <%@ page import="org.json.simple.*" %> --%>
 <%
 
 /**
@@ -23,38 +14,29 @@
  * 如果您确定直接使用本程序，使用之前请仔细确认相关安全设置。
  * 
  */
-//Logger logger = LoggerFactory.getLogger(OSSObjectSample.class);
-//logger.error("upload_json.jsp>>>>>");
-
-SystemSetting systemSetting = SystemManager.systemSetting;
 
 //文件保存目录路径
 String savePath = pageContext.getServletContext().getRealPath("/") + "attached/";
-System.out.println(savePath);
 
 //文件保存目录URL
-String saveUrl  = systemSetting.getImageRootPath() + "/attached/";
-
+String saveUrl  = request.getContextPath() + "/attached/";
 
 //定义允许上传的文件扩展名
 HashMap<String, String> extMap = new HashMap<String, String>();
 extMap.put("image", "gif,jpg,jpeg,png,bmp");
-extMap.put("flash", "swf,flv,mp3,wav,wma,wmv,mid,avi,mpg,asf,rm,rmvb");
+extMap.put("flash", "swf,flv");
 extMap.put("media", "swf,flv,mp3,wav,wma,wmv,mid,avi,mpg,asf,rm,rmvb");
 extMap.put("file", "doc,docx,xls,xlsx,ppt,htm,html,txt,zip,rar,gz,bz2");
-
 
 //最大文件大小
 long maxSize = 1000000;
 
-//session.setAttribute("ajax_upload", 1);
 response.setContentType("text/html; charset=UTF-8");
 
 if(!ServletFileUpload.isMultipartContent(request)){
 	out.println(getError("请选择文件。"));
 	return;
 }
-
 //检查目录
 File uploadDir = new File(savePath);
 if(!uploadDir.isDirectory()){
@@ -75,7 +57,6 @@ if(!extMap.containsKey(dirName)){
 	out.println(getError("目录名不正确。"));
 	return;
 }
-
 //创建文件夹
 savePath += dirName + "/";
 saveUrl += dirName + "/";
@@ -91,26 +72,22 @@ File dirFile = new File(savePath);
 if (!dirFile.exists()) {
 	dirFile.mkdirs();
 }
-
 FileItemFactory factory = new DiskFileItemFactory();
 ServletFileUpload upload = new ServletFileUpload(factory);
 upload.setHeaderEncoding("UTF-8");
 List items = upload.parseRequest(request);
 Iterator itr = items.iterator();
-
 while (itr.hasNext()) {
-	
+System.out.println("itr.hasnext");
 	FileItem item = (FileItem) itr.next();
 	String fileName = item.getName();
 	long fileSize = item.getSize();
-	
 	if (!item.isFormField()) {
 		//检查文件大小
 		if(item.getSize() > maxSize){
 			out.println(getError("上传文件大小超过限制。"));
 			return;
 		}
-		
 		//检查扩展名
 		String fileExt = fileName.substring(fileName.lastIndexOf(".") + 1).toLowerCase();
 		if(!Arrays.<String>asList(extMap.get(dirName).split(",")).contains(fileExt)){
@@ -118,44 +95,20 @@ while (itr.hasNext()) {
 			return;
 		}
 
-		SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");
-		String newFileName1 = null;//小图
-		String newFileName2 = null;//中图
-		String newFileName3 = null;//大图 ，也是原图
-		
-		//String newFileName = df.format(new Date()) + "_" + new Random().nextInt(1000) + "." + fileExt;
-		
-		String newFileName0 = String.valueOf(System.currentTimeMillis());
-		newFileName1 = newFileName0 + "_1";
-		newFileName2 = newFileName0 + "_2";
-		newFileName3 = newFileName0 + "_3." + fileExt;
-		
-		String rootPath = "attached/"+dirName+ "/"+ df.format(new Date()) + "/";//存储前缀
-		
-		File uploadedFile3 = new File(savePath, newFileName3);
-	
-		System.out.println("item.write");	
+		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
+		String newFileName = df.format(new Date()) + "_" + new Random().nextInt(1000) + "." + fileExt;
 		try{
-			item.write(uploadedFile3);
-			
-			//File uploadedFile1 = new File(savePath, newFileName1+"."+fileExt);
-			//File uploadedFile2 = new File(savePath, newFileName2+"."+fileExt);
-			
-			//ImageUtils.ratioZoom2(uploadedFile3,uploadedFile1,Double.valueOf(SystemManager.getInstance().get("product_image_1_w")));
-			//ImageUtils.ratioZoom2(uploadedFile3,uploadedFile2,Double.valueOf(SystemManager.getInstance().get("product_image_2_w")));
-	
-			//item.write(uploadedFile1);
-			//item.write(uploadedFile2);
+			File uploadedFile = new File(savePath, newFileName);
+			item.write(uploadedFile);
 		}catch(Exception e){
 			out.println(getError("上传文件失败。"));
 			return;
 		}
-		
+
 		JSONObject obj = new JSONObject();
 		obj.put("error", 0);
-		obj.put("url", saveUrl + newFileName3);
+		obj.put("url", saveUrl + newFileName);
 		out.println(obj.toJSONString());
-
 	}
 }
 %>
