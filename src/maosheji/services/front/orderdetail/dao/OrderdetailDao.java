@@ -1,0 +1,1 @@
+package maosheji.services.front.orderdetail.dao;import maosheji.core.DaoManager;import maosheji.services.front.orderdetail.bean.Orderdetail;public interface OrderdetailDao extends DaoManager<Orderdetail> {	int selectCount(String orderID);}

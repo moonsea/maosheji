@@ -1,0 +1,1 @@
+package maosheji.services.front.commentType.dao;import maosheji.core.DaoManager;import maosheji.services.front.commentType.bean.CommentType;public interface CommentTypeDao extends DaoManager<CommentType> {}

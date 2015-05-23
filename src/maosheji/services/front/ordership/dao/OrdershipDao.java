@@ -1,0 +1,1 @@
+package maosheji.services.front.ordership.dao;import maosheji.core.DaoManager;import maosheji.services.front.ordership.bean.Ordership;public interface OrdershipDao extends DaoManager<Ordership> {}

@@ -1,0 +1,1 @@
+package maosheji.services.manage.attribute_link;import maosheji.core.Services;import maosheji.services.manage.attribute_link.bean.Attribute_link;public interface Attribute_linkService extends Services<Attribute_link> {	/**	 * @param oldAttr	 */	int deleteByCondition(Attribute_link oldAttr);}

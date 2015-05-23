@@ -1,0 +1,1 @@
+package maosheji.services.manage.task;import maosheji.core.Services;import maosheji.services.manage.task.bean.Task;public interface TaskService extends Services<Task> {}

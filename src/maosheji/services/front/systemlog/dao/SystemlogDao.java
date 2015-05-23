@@ -1,0 +1,1 @@
+package maosheji.services.front.systemlog.dao;import maosheji.core.DaoManager;import maosheji.services.front.systemlog.bean.Systemlog;public interface SystemlogDao extends DaoManager<Systemlog> {}

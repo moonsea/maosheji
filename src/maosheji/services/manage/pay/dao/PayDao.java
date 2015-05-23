@@ -1,0 +1,1 @@
+package maosheji.services.manage.pay.dao;import maosheji.core.DaoManager;import maosheji.services.manage.pay.bean.Pay;public interface PayDao extends DaoManager<Pay> {}

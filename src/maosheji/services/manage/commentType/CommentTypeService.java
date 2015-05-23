@@ -1,0 +1,1 @@
+package maosheji.services.manage.commentType;import maosheji.core.Services;import maosheji.services.manage.commentType.bean.CommentType;public interface CommentTypeService extends Services<CommentType> {}

@@ -1,0 +1,1 @@
+package maosheji.services.manage.task.dao;import maosheji.core.DaoManager;import maosheji.services.manage.task.bean.Task;public interface TaskDao extends DaoManager<Task> {}

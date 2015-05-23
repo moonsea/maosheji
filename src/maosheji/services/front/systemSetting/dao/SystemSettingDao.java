@@ -1,0 +1,1 @@
+package maosheji.services.front.systemSetting.dao;import maosheji.core.DaoManager;import maosheji.services.front.systemSetting.bean.SystemSetting;public interface SystemSettingDao extends DaoManager<SystemSetting> {}

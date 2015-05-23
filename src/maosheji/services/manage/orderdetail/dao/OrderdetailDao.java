@@ -1,0 +1,1 @@
+package maosheji.services.manage.orderdetail.dao;import java.util.List;import maosheji.core.DaoManager;import maosheji.services.manage.orderdetail.bean.Orderdetail;import maosheji.web.action.manage.report.ReportInfo;public interface OrderdetailDao extends DaoManager<Orderdetail> {	List<ReportInfo> reportProductSales(Orderdetail orderdetail);}

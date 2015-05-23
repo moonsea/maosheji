@@ -1,0 +1,1 @@
+package maosheji.services.manage.orderlog.dao;import maosheji.core.DaoManager;import maosheji.services.manage.orderlog.bean.Orderlog;public interface OrderlogDao extends DaoManager<Orderlog> {}

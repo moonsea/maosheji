@@ -1,0 +1,1 @@
+package maosheji.services.front.comment.dao;import maosheji.core.DaoManager;import maosheji.services.front.comment.bean.Comment;public interface CommentDao extends DaoManager<Comment> {	int selectCount(String orderid);}

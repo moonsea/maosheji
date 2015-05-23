@@ -1,0 +1,1 @@
+package maosheji.services.front.attribute.dao;import maosheji.core.DaoManager;import maosheji.services.front.attribute.bean.Attribute;public interface AttributeDao extends DaoManager<Attribute> {	/**	 * @param e	 */	void deleteByPid(Attribute e);}

@@ -1,0 +1,1 @@
+package maosheji.services.front.order.dao;import java.util.List;import maosheji.core.DaoManager;import maosheji.services.front.order.bean.Order;import maosheji.services.front.order.bean.OrderSimpleReport;public interface OrderDao extends DaoManager<Order> {	List<Order> selectOrderInfo(Order order);	OrderSimpleReport selectOrdersSimpleReport(String account);}

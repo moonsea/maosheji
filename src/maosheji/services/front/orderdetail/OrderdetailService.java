@@ -1,0 +1,1 @@
+package maosheji.services.front.orderdetail;import maosheji.core.Services;import maosheji.services.front.orderdetail.bean.Orderdetail;public interface OrderdetailService extends Services<Orderdetail> {}

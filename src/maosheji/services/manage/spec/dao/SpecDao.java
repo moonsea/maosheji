@@ -1,0 +1,1 @@
+package maosheji.services.manage.spec.dao;import maosheji.core.DaoManager;import maosheji.services.manage.spec.bean.Spec;public interface SpecDao extends DaoManager<Spec> {}

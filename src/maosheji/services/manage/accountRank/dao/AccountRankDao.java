@@ -1,0 +1,1 @@
+package maosheji.services.manage.accountRank.dao;import maosheji.core.DaoManager;import maosheji.services.manage.accountRank.bean.AccountRank;public interface AccountRankDao extends DaoManager<AccountRank> {}

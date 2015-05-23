@@ -1,0 +1,1 @@
+package maosheji.services.manage.spec;import maosheji.core.Services;import maosheji.services.manage.spec.bean.Spec;public interface SpecService extends Services<Spec> {}

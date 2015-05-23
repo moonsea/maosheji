@@ -1,0 +1,1 @@
+package maosheji.services.manage.hotquery.dao;import maosheji.core.DaoManager;import maosheji.services.manage.hotquery.bean.Hotquery;public interface HotqueryDao extends DaoManager<Hotquery> {}

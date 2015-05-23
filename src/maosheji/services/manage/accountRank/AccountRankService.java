@@ -1,0 +1,1 @@
+package maosheji.services.manage.accountRank;import maosheji.core.Services;import maosheji.services.manage.accountRank.bean.AccountRank;public interface AccountRankService extends Services<AccountRank> {}

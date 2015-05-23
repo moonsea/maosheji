@@ -1,0 +1,1 @@
+package maosheji.services.front.favorite.dao;import maosheji.core.DaoManager;import maosheji.services.front.favorite.bean.Favorite;public interface FavoriteDao extends DaoManager<Favorite> {	int selectCount(Favorite favorite);}

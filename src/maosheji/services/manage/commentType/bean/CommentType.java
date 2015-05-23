@@ -1,0 +1,1 @@
+package maosheji.services.manage.commentType.bean;import java.io.Serializable;import maosheji.core.dao.page.PagerModel;public class CommentType extends maosheji.services.common.CommentType implements Serializable {	private static final long serialVersionUID = 1L;		public void clear() {		super.clear();	}}

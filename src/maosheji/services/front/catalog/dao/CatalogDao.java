@@ -1,0 +1,1 @@
+package maosheji.services.front.catalog.dao;import maosheji.core.DaoManager;import maosheji.services.front.catalog.bean.Catalog;public interface CatalogDao extends DaoManager<Catalog> {}

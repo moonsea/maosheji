@@ -1,0 +1,1 @@
+package maosheji.services.manage.keyvalue;import maosheji.core.Services;import maosheji.services.manage.keyvalue.bean.Keyvalue;public interface KeyvalueService extends Services<Keyvalue> {}

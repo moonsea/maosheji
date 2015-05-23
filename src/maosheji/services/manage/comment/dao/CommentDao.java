@@ -1,0 +1,1 @@
+package maosheji.services.manage.comment.dao;import maosheji.core.DaoManager;import maosheji.services.manage.comment.bean.Comment;public interface CommentDao extends DaoManager<Comment> {	int selectNotReplyCount();	void updateStatus(Comment c);}

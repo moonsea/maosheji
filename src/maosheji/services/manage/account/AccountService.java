@@ -1,0 +1,1 @@
+package maosheji.services.manage.account;import maosheji.core.Services;import maosheji.services.manage.account.bean.Account;public interface AccountService extends Services<Account> {}

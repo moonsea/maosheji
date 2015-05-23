@@ -1,0 +1,1 @@
+package maosheji.services.manage.account.dao;import maosheji.core.DaoManager;import maosheji.services.manage.account.bean.Account;public interface AccountDao extends DaoManager<Account> {}

@@ -1,0 +1,1 @@
+package maosheji.services.manage.keyvalue.dao;import maosheji.core.DaoManager;import maosheji.services.manage.keyvalue.bean.Keyvalue;public interface KeyvalueDao extends DaoManager<Keyvalue> {}

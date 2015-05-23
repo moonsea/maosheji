@@ -1,0 +1,1 @@
+package maosheji.services.front.favorite;import maosheji.core.Services;import maosheji.services.front.favorite.bean.Favorite;public interface FavoriteService extends Services<Favorite> {	int selectCount(Favorite favorite);}

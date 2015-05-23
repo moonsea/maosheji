@@ -1,0 +1,1 @@
+package maosheji.services.front.systemlog;import maosheji.core.Services;import maosheji.services.front.systemlog.bean.Systemlog;public interface SystemlogService extends Services<Systemlog> {}

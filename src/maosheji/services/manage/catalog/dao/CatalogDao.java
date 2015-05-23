@@ -1,0 +1,1 @@
+package maosheji.services.manage.catalog.dao;import java.util.List;import maosheji.core.DaoManager;import maosheji.services.manage.catalog.bean.Catalog;public interface CatalogDao extends DaoManager<Catalog> {	/**	 * @param string	 */	void deletes(List<String> list);}

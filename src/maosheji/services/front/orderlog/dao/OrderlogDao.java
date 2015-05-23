@@ -1,0 +1,1 @@
+package maosheji.services.front.orderlog.dao;import maosheji.core.DaoManager;import maosheji.services.front.orderlog.bean.Orderlog;public interface OrderlogDao extends DaoManager<Orderlog> {	int selectCount(Orderlog orderlog);}

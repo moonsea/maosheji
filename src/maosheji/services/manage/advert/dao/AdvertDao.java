@@ -1,0 +1,1 @@
+package maosheji.services.manage.advert.dao;import maosheji.core.DaoManager;import maosheji.services.manage.advert.bean.Advert;public interface AdvertDao extends DaoManager<Advert> {}

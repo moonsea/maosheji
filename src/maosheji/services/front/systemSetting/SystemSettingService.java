@@ -1,0 +1,1 @@
+package maosheji.services.front.systemSetting;import maosheji.core.Services;import maosheji.services.front.systemSetting.bean.SystemSetting;public interface SystemSettingService extends Services<SystemSetting> {}

@@ -1,0 +1,1 @@
+package maosheji.services.front.area;import maosheji.core.Services;import maosheji.services.front.area.bean.Area;public interface AreaService extends Services<Area> {}

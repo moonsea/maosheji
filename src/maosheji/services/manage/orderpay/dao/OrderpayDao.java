@@ -1,0 +1,1 @@
+package maosheji.services.manage.orderpay.dao;import maosheji.core.DaoManager;import maosheji.services.manage.orderpay.bean.Orderpay;public interface OrderpayDao extends DaoManager<Orderpay> {}

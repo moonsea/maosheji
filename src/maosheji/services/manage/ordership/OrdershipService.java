@@ -1,0 +1,1 @@
+package maosheji.services.manage.ordership;import maosheji.core.Services;import maosheji.services.manage.ordership.bean.Ordership;public interface OrdershipService extends Services<Ordership> {}

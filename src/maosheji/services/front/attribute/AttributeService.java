@@ -1,0 +1,1 @@
+package maosheji.services.front.attribute;import maosheji.core.Services;import maosheji.services.front.attribute.bean.Attribute;public interface AttributeService extends Services<Attribute> {}

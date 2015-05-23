@@ -1,0 +1,1 @@
+package maosheji.services.manage.pay;import maosheji.core.Services;import maosheji.services.manage.pay.bean.Pay;public interface PayService extends Services<Pay> {}

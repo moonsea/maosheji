@@ -1,0 +1,1 @@
+package maosheji.services.front.pay.bean;import java.io.Serializable;import maosheji.core.dao.page.PagerModel;public class Pay extends maosheji.services.common.Pay implements Serializable {	private static final long serialVersionUID = 1L;	public void clear() {		super.clear();	}}

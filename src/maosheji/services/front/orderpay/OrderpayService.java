@@ -1,0 +1,1 @@
+package maosheji.services.front.orderpay;import maosheji.core.Services;import maosheji.services.front.orderpay.bean.Orderpay;public interface OrderpayService extends Services<Orderpay> {}

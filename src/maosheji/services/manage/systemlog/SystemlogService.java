@@ -1,0 +1,1 @@
+package maosheji.services.manage.systemlog;import maosheji.core.Services;import maosheji.services.manage.systemlog.bean.Systemlog;public interface SystemlogService extends Services<Systemlog> {		/**	 * 根据账号查询最新的一次登陆记录	 * @return	 */	Systemlog selectFirstOne(String account);}

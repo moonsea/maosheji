@@ -1,0 +1,1 @@
+package maosheji.services.front.area.dao;import maosheji.core.DaoManager;import maosheji.services.front.area.bean.Area;public interface AreaDao extends DaoManager<Area> {}

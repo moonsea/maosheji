@@ -1,0 +1,1 @@
+package maosheji.services.manage.attribute;import maosheji.core.Services;import maosheji.services.manage.attribute.bean.Attribute;public interface AttributeService extends Services<Attribute> {	int selectCount(Attribute ee);}

@@ -1,0 +1,1 @@
+package maosheji.services.front.orderlog;import maosheji.core.Services;import maosheji.services.front.orderlog.bean.Orderlog;public interface OrderlogService extends Services<Orderlog> {}
