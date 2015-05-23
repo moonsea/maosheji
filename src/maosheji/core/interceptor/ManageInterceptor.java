@@ -141,34 +141,5 @@ public class ManageInterceptor extends AbstractInterceptor {
 		logger.error("ManageInterceptor.actionInvocation.invoke().");
 		return actionInvocation.invoke();
 		
-		//对其他用户则进行权限验证，没有权限，则提示无权限。
-//		if(PrivilegeUtil.check(ServletActionContext.getRequest().getSession(), urlBuff.toString())){
-//			return actionInvocation.invoke();
-//		}else{
-//			logger.error("没有权限！");
-////			ServletActionContext.getResponse().sendRedirect(SystemManager.systemSetting.getManageHttp()+"/error.jsp");
-//			return not_privilege;
-//		}
-		
-//		// 对LoginAction不做该项拦截
-//		Object action = actionInvocation.getAction();
-//		if (action instanceof LoginAction) {
-//			System.out
-//					.println("exit check login, because this is login action.");
-//			return actionInvocation.invoke();
-//		}
-//
-//		// 确认Session中是否存在LOGIN
-//		Map session = actionInvocation.getInvocationContext().getSession();
-//		String login = (String) session.get(LOGIN_KEY);
-//		if (login != null && login.length() > 0) {
-//			// 存在的情况下进行后续操作。
-//			System.out.println("already login!");
-//			return actionInvocation.invoke();
-//		} else {
-//			// 否则终止后续操作，返回LOGIN
-//			System.out.println("no login, forward login page!");
-//			return LOGIN_PAGE;
-//		}
 	}
 }

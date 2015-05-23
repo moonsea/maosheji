@@ -1,1 +1,0 @@
-package maosheji.services.manage.advert;import maosheji.core.Services;import maosheji.services.manage.advert.bean.Advert;public interface AdvertService extends Services<Advert> {}

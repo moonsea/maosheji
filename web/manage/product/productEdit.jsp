@@ -122,7 +122,7 @@ background-color: #d1d1d1;display: none;height: 30px;z-index: 9999;font-size: 18
 								</td>
 								<td style="text-align: right;">单位</td>
 								<td colspan="1">
-									<s:select list="#{'item':'件'}" id="unit" name="e.unit" 
+									<s:select list="#{'item':'只'}" id="unit" name="e.unit" 
 										listKey="key" listValue="value"  />
 								</td>
 							</tr>

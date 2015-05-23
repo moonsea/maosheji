@@ -20,8 +20,6 @@ import maosheji.core.ManageContainer;
 import maosheji.core.front.SystemManager;
 import maosheji.core.pay.alipay.alipayescow.config.AlipayConfig;
 import maosheji.core.util.DateTimeUtil;
-//import maosheji.services.front.advert.AdvertService;
-//import maosheji.services.front.advert.bean.Advert;
 import maosheji.services.front.area.AreaService;
 import maosheji.services.front.area.bean.Area;
 import maosheji.services.front.attribute.AttributeService;
@@ -31,18 +29,12 @@ import maosheji.services.front.catalog.bean.Catalog;
 import maosheji.services.front.comment.CommentService;
 import maosheji.services.front.commentType.CommentTypeService;
 import maosheji.services.front.commentType.bean.CommentType;
-//import maosheji.services.front.express.ExpressService;
-//import maosheji.services.front.express.bean.Express;
 import maosheji.services.front.indexImg.IndexImgService;
 import maosheji.services.front.indexImg.bean.IndexImg;
 import maosheji.services.front.keyvalue.KeyvalueService;
 import maosheji.services.front.keyvalue.bean.Keyvalue;
-//import maosheji.services.front.navigation.NavigationService;
-//import maosheji.services.front.navigation.bean.Navigation;
 import maosheji.services.front.news.NewsService;
 import maosheji.services.front.news.bean.News;
-//import maosheji.services.front.notifyTemplate.NotifyTemplateService;
-//import maosheji.services.front.notifyTemplate.bean.NotifyTemplate;
 import maosheji.services.front.order.OrderService;
 import maosheji.services.front.pay.PayService;
 import maosheji.services.front.pay.bean.Pay;
@@ -53,13 +45,6 @@ import maosheji.services.front.systemSetting.SystemSettingService;
 import maosheji.services.front.systemSetting.bean.SystemSetting;
 import maosheji.services.manage.accountRank.AccountRankService;
 import maosheji.services.manage.accountRank.bean.AccountRank;
-//import maosheji.services.manage.activity.ActivityService;
-//import maosheji.services.manage.activity.bean.Activity;
-//import maosheji.services.manage.hotquery.HotqueryService;
-//import maosheji.services.manage.hotquery.bean.Hotquery;
-//import maosheji.services.manage.oss.OssService;
-//import maosheji.services.manage.oss.bean.AliyunOSS;
-//import maosheji.services.manage.oss.bean.Oss;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
@@ -87,42 +72,18 @@ public class FrontCache {
 	private NewsService newsService;
 	private CatalogService catalogService;
 	private IndexImgService indexImgService;
-//	private NavigationService navigationService;
 	private AttributeService attributeService;
 	private PayService payService;
 	private CommentTypeService commentTypeService;
 	private AreaService areaService;
-//	private ExpressService expressService;
-//	private AdvertService advertService;
-//	private NotifyTemplateService notifyTemplateService;
-//	private OssService ossService;
 	private OrderService orderService;
 	private CommentService commentService;
 	private AccountRankService accountRankService;
-//	private ActivityService activityService;
-//	private HotqueryService hotqueryService;
-	
+
 	/**
 	 * front前台
 	 */
 	private ProductService productService;
-
-	
-//	public HotqueryService getHotqueryService() {
-//		return hotqueryService;
-//	}
-//
-//	public void setHotqueryService(HotqueryService hotqueryService) {
-//		this.hotqueryService = hotqueryService;
-//	}
-
-//	public ActivityService getActivityService() {
-//		return activityService;
-//	}
-//
-//	public void setActivityService(ActivityService activityService) {
-//		this.activityService = activityService;
-//	}
 
 	public AccountRankService getAccountRankService() {
 		return accountRankService;
@@ -139,18 +100,6 @@ public class FrontCache {
 	public void setOrderService(OrderService orderService) {
 		this.orderService = orderService;
 	}
-
-//	public void setNotifyTemplateService(NotifyTemplateService notifyTemplateService) {
-//		this.notifyTemplateService = notifyTemplateService;
-//	}
-
-//	public void setAdvertService(AdvertService advertService) {
-//		this.advertService = advertService;
-//	}
-//
-//	public void setExpressService(ExpressService expressService) {
-//		this.expressService = expressService;
-//	}
 
 	public void setAreaService(AreaService areaService) {
 		this.areaService = areaService;
@@ -189,10 +138,6 @@ public class FrontCache {
 		this.productService = productService;
 	}
 
-//	public void setNavigationService(NavigationService navigationService) {
-//		this.navigationService = navigationService;
-//	}
-
 	public void setKeyvalueService(KeyvalueService keyvalueService) {
 		this.keyvalueService = keyvalueService;
 	}
@@ -228,10 +173,6 @@ public class FrontCache {
 			}
 		}
 		
-		//分解信任登陆
-//		if(StringUtils.isNotBlank(SystemManager.systemSetting.getBelieveLoginConfig())){
-////			SystemManager.systemSetting.setBelieveLoginInfo(JSON.parseObject(SystemManager.systemSetting.getBelieveLoginConfig(), BelieveLoginInfo.class));
-//		}
 	}
 
 	/**
@@ -250,7 +191,6 @@ public class FrontCache {
 		AlipayConfig.partner = pay.getPartner();
 		AlipayConfig.key = pay.getKey1();
 		
-//		logger.error("SystemManager.alipayConfig="+SystemManager.alipayConfig);
 		
 		/**
 		 * 加载评论配置
@@ -431,16 +371,6 @@ public class FrontCache {
 	 */
 	public void loadCatalogs(boolean loadProduct) throws Exception {
 		logger.info("load...");
-//		Catalog c = new Catalog();
-//		c.setType("p");
-//		c.setPid("0");
-//		List<Catalog> catalogs = catalogService.loadRoot(c);
-//		
-//		System.out.println("result:" + catalogs);
-//		
-//		SystemManager.catalogs = catalogs;
-		
-//		loadCatalogs2();
 		
 		loadCatalogs2("p",SystemManager.catalogs);
 		loadCatalogs2("a",SystemManager.catalogsArticle);
@@ -513,11 +443,6 @@ public class FrontCache {
 		product.setProductIds(ids);//目录集合
 		List<Product> superMenuProducts = productService.loadHotProductShowInSuperMenu(product);
 		
-//		if(superMenuProducts==null || superMenuProducts.size()==0){
-//			logger.error("superMenuProducts = 0" + ",catalogCode = " + item.getCode());
-//		}else{
-//			logger.error("superMenuProducts = " + superMenuProducts.size()  + ",catalogCode = " + item.getCode());
-//		}
 		if(superMenuProducts!=null && superMenuProducts.size()>0){
 			item.setSuperMenuProducts(superMenuProducts);
 		}
@@ -692,16 +617,6 @@ public class FrontCache {
 		System.out.println("list====" + list);
 	}
 
-	/**
-	 * 加载门户导航菜单
-	 */
-//	public void loadNavigations() {
-//		logger.info("load...");
-//		Navigation nav = new Navigation();
-//		nav.setPosition("bottom");
-//		List<Navigation> navigations = navigationService.selectList(nav);
-//		SystemManager.navigations = navigations;
-//	}
 
 	/**
 	 * 加载特价商品、热门商品、新品商品  显示到首页的中下方位置
@@ -712,15 +627,6 @@ public class FrontCache {
 		SystemManager.hotProducts = loadProducts(3);
 	}
 
-	/**
-	 * 加载随机推荐的商品
-	 */
-//	public void loadSuijiProducts() {
-////		SystemManager.suijiProducts = loadProducts(2);
-//		Product p = new Product();
-//		p.setTop(10);
-//		SystemManager.suijiProducts = productService.selectList(p);
-//	}
 
 	// 加载商品
 	private List<Product> loadProducts(int type) {

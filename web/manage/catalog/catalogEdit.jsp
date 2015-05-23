@@ -43,11 +43,11 @@
 				<td colspan="2" style="background-color: #dff0d8;text-align: center;">
 					<strong>编辑分类</strong>
 					
-					<s:if test="e.type.equals(\"p\")">
-						<span class="badge badge-important">商品分类</span>&nbsp;<strong>
+					<s:if test="e.type.equals(\"a\")">
+						<span class="badge badge-important">文章分类</span>&nbsp;<strong>
 					</s:if>
 					<s:else>
-						<span class="badge badge-success">文章分类</span>&nbsp;<strong>
+						<span class="badge badge-success">商品分类</span>&nbsp;<strong>
 					</s:else>
 				</td>
 			</tr>
@@ -126,11 +126,8 @@
 			</s:if>
 			
 			<tr>
+				<td style="display:none;"><s:textfield name="e.type" value="p"></s:textfield></td>
 				<td colspan="2" style="text-align: center;"><s:if test="e.id=='' or e.id==null">
-<%-- 								<s:submit method="insert" value="新增" cssClass="btn btn-primary"/> --%>
-<%-- 								<s:a method="insert" cssClass="btn btn-success"> --%>
-<!-- 									<i class="icon-plus-sign icon-white"></i> 新增 -->
-<%-- 								</s:a> --%>
 						
 						<button method="catalog!insert.action" class="btn btn-success">
 							<i class="icon-ok icon-white"></i> 新增
