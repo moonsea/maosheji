@@ -116,12 +116,7 @@
 		<property name="advertService" ref="advertServiceManage"></property>
 	</bean>
 	
-	<!-- 问卷管理 -->
-	<bean id="questionnaireActionManage" class="maosheji.web.action.manage.questionnaire.QuestionnaireAction" scope="prototype">
-		<property name="server" ref="questionnaireServiceManage"></property>
-		<property name="questionnaireService" ref="questionnaireServiceManage"></property>
-		<property name="questionnaireItemService" ref="questionnaireItemServiceManage"></property>
-	</bean>
+	
 	
 	<!-- 支付方式管理 -->
 	<bean id="payActionManage" class="maosheji.web.action.manage.pay.PayAction" scope="prototype">
@@ -149,49 +144,7 @@
 		<property name="orderdetailService" ref="orderdetailServiceManage"></property>
 	</bean>
 	
-	<!-- 物流管理 -->
-	<bean id="expressActionManage" class="maosheji.web.action.manage.express.ExpressAction" scope="prototype">
-		<property name="server" ref="expressServiceManage"></property>
-		<property name="expressService" ref="expressServiceManage"></property>
-	</bean>
-	
-	<!-- SMS短信管理 -->
-	<bean id="smsActionManage" class="maosheji.web.action.manage.sms.SmsAction" scope="prototype">
-		<property name="server" ref="smsServiceManage"></property>
-		<property name="smsService" ref="smsServiceManage"></property>
-	</bean>
-	
-	<!-- 商品到货通知 -->
-	<bean id="emailNotifyProductActionManage" class="maosheji.web.action.manage.emailNotifyProduct.EmailNotifyProductAction" scope="prototype">
-		<property name="server" ref="emailNotifyProductServiceManage"></property>
-		<property name="emailNotifyProductService" ref="emailNotifyProductServiceManage"></property>
-	</bean>
-	
-	<!-- 通知模板 -->
-	<bean id="notifyTemplateActionManage" class="maosheji.web.action.manage.notifyTemplate.NotifyTemplateAction" scope="prototype">
-		<property name="server" ref="notifyTemplateServiceManage"></property>
-		<property name="notifyTemplateService" ref="notifyTemplateServiceManage"></property>
-	</bean>
-	
-	<!-- 邮件管理 -->
-	<bean id="emailActionManage" class="maosheji.web.action.manage.email.EmailAction" scope="prototype">
-		<property name="server" ref="emailServiceManage"></property>
-		<property name="emailService" ref="emailServiceManage"></property>
-	</bean>
-	
-	<!-- 邮件管理 -->
-	<bean id="taskActionManage" class="maosheji.web.action.manage.task.TaskAction" scope="prototype">
-		<property name="server" ref="taskServiceManage"></property>
-		<property name="taskService" ref="taskServiceManage"></property>
-	</bean>
-	
-	<!-- 促销活动管理 -->
-	<bean id="activityActionManage" class="maosheji.web.action.manage.activity.ActivityAction" scope="prototype">
-		<property name="server" ref="activityServiceManage"></property>
-		<property name="activityService" ref="activityServiceManage"></property>
-	</bean>
-	
-	
+
 	
 	<!-- 热门查询管理 -->
 	<bean id="hotqueryActionManage" class="maosheji.web.action.manage.hotquery.HotqueryAction" scope="prototype">

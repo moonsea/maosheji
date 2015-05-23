@@ -91,16 +91,7 @@ body{
 						</div>
 					</div>
 				</form>
-				<div style="text-align: left;margin-top: 5px;">热门搜索：
-					<%
-						application.setAttribute("hotqueryList", SystemManager.hotqueryList);
-					%>
-					<s:iterator value="#application.hotqueryList" status="i" var="row">
-						<a class="hotSearch" href="<s:property escape="false" value="url"/>" target="_blank">
-							<s:property escape="false" value="key1"/>
-						</a>
-					</s:iterator>
-				</div>
+				
 			</div>
 			<div class="col-xs-3" style="height: 100%;">
 				<br><br><br>

@@ -14,7 +14,8 @@
 <%@ page import="org.apache.commons.fileupload.servlet.*" %>
 
 <%-- <%@ page import="org.json.simple.*" %> --%>
-<%<!--
+
+<%
 
 /**
  * KindEditor JSP
@@ -29,7 +30,9 @@
 SystemSetting systemSetting = SystemManager.systemSetting;
 
 //文件保存目录路径
-String savePath = pageContext.getServletContext().getRealPath("/") + "attached/";
+String savePath = pageContext.getServletContext().getRealPath("/") + "attached\\";
+//String savePath = "./attached/";
+//System.out.println(savePath);
 
 //文件保存目录URL
 String saveUrl  = systemSetting.getImageRootPath() + "/attached/";
@@ -46,13 +49,14 @@ extMap.put("file", "doc,docx,xls,xlsx,ppt,htm,html,txt,zip,rar,gz,bz2");
 //最大文件大小
 long maxSize = 1000000;
 
-session.setAttribute("ajax_upload", 1);
+//session.setAttribute("ajax_upload", 1);
 response.setContentType("text/html; charset=UTF-8");
 
 if(!ServletFileUpload.isMultipartContent(request)){
 	out.println(getError("请选择文件。"));
 	return;
 }
+
 
 //检查目录
 File uploadDir = new File(savePath);
@@ -110,12 +114,17 @@ while (itr.hasNext()) {
 			return;
 		}
 		
+
+
+																			System.out.println("haha");
+		
 		//检查扩展名
-		String fileExt = fileName.substring(fileName.lastIndexOf(".") + 1).toLowerCase();
+		String fileExt = fileName.substring(fileName.lastIndexOf(".") + 1).toLowerCase();		
 		if(!Arrays.<String>asList(extMap.get(dirName).split(",")).contains(fileExt)){
 			out.println(getError("上传文件扩展名是不允许的扩展名。\n只允许" + extMap.get(dirName) + "格式。"));
 			return;
 		}
+		
 
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");
 		String newFileName1 = null;//小图

@@ -1,1 +1,0 @@
-package maosheji.services.manage.hotquery;import maosheji.core.Services;import maosheji.services.manage.hotquery.bean.Hotquery;public interface HotqueryService extends Services<Hotquery> {}

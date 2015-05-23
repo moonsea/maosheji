@@ -37,7 +37,6 @@ try{
 		out.println("加载数据成功！");
 	}else if(method.equals("hotquery")){
 		
-		frontCache.loadHotquery();
 		out.println("加载数据成功！");
 	}
 }catch(Exception e){

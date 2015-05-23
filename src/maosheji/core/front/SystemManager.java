@@ -25,7 +25,7 @@ import maosheji.services.front.product.bean.ProductStockInfo;
 import maosheji.services.front.systemSetting.bean.SystemSetting;
 import maosheji.services.manage.accountRank.bean.AccountRank;
 //import maosheji.services.manage.activity.bean.Activity;
-import maosheji.services.manage.hotquery.bean.Hotquery;
+//import maosheji.services.manage.hotquery.bean.Hotquery;
 import maosheji.services.manage.order.bean.OrdersReport;
 //import maosheji.services.manage.oss.bean.AliyunOSS;
 import maosheji.services.manage.task.bean.Task;
@@ -60,7 +60,7 @@ public class SystemManager {
 	public static List<Product> hotSearchProductList;//热门搜索的商品列表
 	public static String alipayConfig;//支付宝卖家账号
 	public static String commentTypeCode;//启用的评论插件的代号
-	public static List<Hotquery> hotqueryList;//热门查询列表
+//	public static List<Hotquery> hotqueryList;//热门查询列表
 //	public static Map<Integer, Integer> catalogMap = new HashMap<Integer, Integer>();//目录表，key:目录ID，value:目录顶级PID
 	
 	/**

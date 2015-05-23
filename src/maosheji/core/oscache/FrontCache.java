@@ -55,8 +55,8 @@ import maosheji.services.manage.accountRank.AccountRankService;
 import maosheji.services.manage.accountRank.bean.AccountRank;
 //import maosheji.services.manage.activity.ActivityService;
 //import maosheji.services.manage.activity.bean.Activity;
-import maosheji.services.manage.hotquery.HotqueryService;
-import maosheji.services.manage.hotquery.bean.Hotquery;
+//import maosheji.services.manage.hotquery.HotqueryService;
+//import maosheji.services.manage.hotquery.bean.Hotquery;
 //import maosheji.services.manage.oss.OssService;
 //import maosheji.services.manage.oss.bean.AliyunOSS;
 //import maosheji.services.manage.oss.bean.Oss;
@@ -100,7 +100,7 @@ public class FrontCache {
 	private CommentService commentService;
 	private AccountRankService accountRankService;
 //	private ActivityService activityService;
-	private HotqueryService hotqueryService;
+//	private HotqueryService hotqueryService;
 	
 	/**
 	 * front前台
@@ -108,13 +108,13 @@ public class FrontCache {
 	private ProductService productService;
 
 	
-	public HotqueryService getHotqueryService() {
-		return hotqueryService;
-	}
-
-	public void setHotqueryService(HotqueryService hotqueryService) {
-		this.hotqueryService = hotqueryService;
-	}
+//	public HotqueryService getHotqueryService() {
+//		return hotqueryService;
+//	}
+//
+//	public void setHotqueryService(HotqueryService hotqueryService) {
+//		this.hotqueryService = hotqueryService;
+//	}
 
 //	public ActivityService getActivityService() {
 //		return activityService;
@@ -1114,17 +1114,17 @@ public class FrontCache {
 	/**
 	 * 加载热门查询列表
 	 */
-	public void loadHotquery(){
-		SystemManager.hotqueryList = hotqueryService.selectList(new Hotquery());
-	}
-	
+//	public void loadHotquery(){
+//		SystemManager.hotqueryList = hotqueryService.selectList(new Hotquery());
+//	}
+//	
 	/**
 	 * 加载全部的缓存数据
 	 * @throws Exception 
 	 */
 	public void loadAllCache() throws Exception {
 		logger.error("loadAllCache...");
-		loadHotquery();
+//		loadHotquery();
 		loadCatalogs(true);
 		loadIndexLeftProduct();
 		loadAttributeList();

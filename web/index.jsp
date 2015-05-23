@@ -98,15 +98,10 @@ function defaultProductImg(){
 <!-- 					</div> -->
 <!-- 				</div> -->
 				
-				<%String indexProductListUrl = "index_productList.jsp?queryType=hot";%>
-				<jsp:include flush="true" page="<%=indexProductListUrl %>"></jsp:include>
 				
-				<%indexProductListUrl = "index_productList.jsp?queryType=sale";%>
-				<jsp:include flush="true" page="<%=indexProductListUrl %>"></jsp:include>
 				
-				<%indexProductListUrl = "index_productList.jsp?queryType=newest";%>
+				<% String indexProductListUrl = "index_productList.jsp?queryType=newest";%>
 				<jsp:include flush="true" page="<%=indexProductListUrl %>"></jsp:include>
-<%-- 				<%@ include file="/index_productList.jsp?queryType=hot"%> --%>
 			</div>
 			
 		</div>

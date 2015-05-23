@@ -222,15 +222,6 @@
 	<!-- 商品赠品管理 -->
 	
 	
-	<!-- 热门查询管理 -->
-	<bean id="hotqueryDaoManage" class="maosheji.services.manage.hotquery.dao.impl.HotqueryDaoImpl">
-		<property name="dao" ref="baseDao"></property>
-	</bean>
-	<bean id="hotqueryServiceManage" class="maosheji.services.manage.hotquery.impl.HotqueryServiceImpl">
-		<property name="dao" ref="hotqueryDaoManage"></property>
-		<property name="hotqueryDao" ref="hotqueryDaoManage"></property>
-	</bean>
-	
 	<!-- 后台缓存管理器 -->
 	<bean id="manageCache" class="maosheji.core.oscache.ManageCache">
 		<property name="orderService" ref="orderServiceManage"></property>

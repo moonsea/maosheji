@@ -116,100 +116,6 @@ function defaultProductImg(){
 		<div class="container">
 			<!-- 产品详细信息-->
 			<div class="row">
-				<!-- 热门商品列表 -->
-				<div class="col-xs-3" style="border: 1px solid #c0c0c0; text-align: left;">
-					<div class="row" >
-						<h4 class="topCss">畅销商品</h4>
-					</div>
-					<%
-					Object _code = request.getAttribute("childrenCatalogCode");
-					String _codeStr = null;
-					if(_code!=null){
-						_codeStr = _code.toString();
-					}
-					application.setAttribute("hotProducts", SystemManager.getInstance().getProductsByCatalogCode(_codeStr));
-					%>
-					<s:iterator value="#application.hotProducts" status="i" var="item">
-						<div class="row">
-							<div class="col-xs-3">
-								
-								<a style="width: 50px;height: 50px;" href="<%=request.getContextPath() %>/product/<s:property escape="false" value="id" />.html" target="_blank" title="<s:property escape="false" value="name" />">
-									<img class="lazy" style="border: 0px;display: block;margin: auto;width: 50px;height: 50px;" 
-									src="<%=SystemManager.systemSetting.getDefaultProductImg()%>" 
-									data-original="<%=SystemManager.systemSetting.getImageRootPath() %><s:property escape="false" value="picture" />" />
-								</a>
-							</div>
-							<div class="col-xs-9">
-								<h4>
-									<div class="left_product">
-										<a title="<s:property escape="false" value="name" />" href="<%=request.getContextPath() %>/product/<s:property escape="false" value="id" />.html" target="_blank">
-											<s:property escape="false" value="name" />
-										</a>
-									</div>
-								</h4>
-								<div class="row">
-									<div class="col-xs-6">
-										<b style="font-weight: bold;color: #cc0000;">
-											￥<s:property escape="false" value="nowPrice" />
-										</b>
-									</div>
-									<div class="col-xs-6">
-										<b style="text-decoration: line-through;font-weight: normal;font-size: 11px;color: #a5a5a5;">
-											￥<s:property escape="false" value="price" />
-										</b>
-									</div>
-								</div>
-							</div>
-						</div>
-						<br>
-					</s:iterator>
-					
-					<!-- 特价商品 -->
-					<div class="row">
-						<h4 class="topCss">特价商品</h4>
-					</div>
-					<%
-					application.setAttribute("saleProducts", SystemManager.saleProducts);
-					%>
-					<s:iterator value="#application.saleProducts" status="i" var="item">
-						<div class="row">
-							<div class="col-xs-3">
-								<a href="<%=request.getContextPath() %>/product/<s:property escape="false" value="id" />.html" target="_blank" title="<s:property escape="false" value="name" />">
-									
-									<img class="lazy" style="border: 0px;display: block;margin: auto;width: 50px;height: 50px;" 
-									src="<%=SystemManager.systemSetting.getDefaultProductImg()%>" 
-									data-original="<%=SystemManager.systemSetting.getImageRootPath() %><s:property escape="false" value="picture" />" />
-								</a>
-							</div>
-							<div class="col-xs-9">
-								<h4>
-									<div class="left_product">
-										<a title="<s:property escape="false" value="name" />" href="<%=request.getContextPath() %>/product/<s:property escape="false" value="id" />.html" target="_blank">
-											<s:property escape="false" value="name" />
-										</a>
-									</div>
-								</h4>
-								<div class="row">
-									<div class="col-xs-6">
-										<b style="font-weight: bold;color: #cc0000;">
-											￥<s:property escape="false" value="nowPrice" />
-										</b>
-									</div>
-									<div class="col-xs-6">
-										<b style="text-decoration: line-through;font-weight: normal;font-size: 11px;color: #a5a5a5;">
-											￥<s:property escape="false" value="price" />
-										</b>
-									</div>
-								</div>
-							</div>
-						</div>
-						<br>
-					</s:iterator>
-					
-				
-					<%@ include file="history_productList.jsp"%>
-				</div>
-				
 				<!-- 商品图片列表和购买按钮 -->
 				<div class="col-xs-9" style="border: 0px solid red; text-align: left;">
 					<!-- 导航 -->
@@ -221,34 +127,6 @@ function defaultProductImg(){
 								  <li class="active"><a href="<%=SystemManager.systemSetting.getWww()%>/catalog/<s:property escape="false" value="e.childrenCatalogCode"/>.html"><s:property escape="false" value="e.childrenCatalogName"/></a></li>
 							  </s:if>
 							</ol>
-						</div>
-					</div>
-					
-					<!-- 如果商品有赠品，则显示到此处 -->
-					<div class="row" style="margin-top: 10px;">
-						<div class="col-xs-12">
-							<s:if test="e.gift!=null">
-								<ul class="list-group" >
-									<li class="list-group-item">
-										商品赠品：<s:property escape="false" value="e.gift.giftName"/>
-										<button class="btn btn-link btn-xs" onclick="showGiftDetail()">【详情】</button>
-										
-										<div style="display: none;" id="giftDetailDiv">
-											<div class="row" style="margin-top: 10px;">
-												<div class="col-xs-6">
-													<img class="lazy" style="border: 0px;display: block;margin: auto;max-width: 100%;" 
-													src="<%=SystemManager.systemSetting.getImageRootPath() %><s:property escape="false" value="e.gift.picture" />" />
-												</div>
-												<div class="col-xs-6">
-													赠品名称：<s:property escape="false" value="e.gift.giftName"/><br>
-													市场价：<s:property escape="false" value="e.gift.giftPrice"/><br>
-													赠品数量有限，赠完即止！
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</s:if>
 						</div>
 					</div>
 					
@@ -268,77 +146,13 @@ function defaultProductImg(){
 						<!-- 产品详细信息 -->
 						<div class="col-xs-6">
 							<div style="line-height: 20px;">
-								<!-- 活动判断，显示HTML -->
-								<s:if test="e.activityID!=null">
-									<s:if test="!e.expire">
-										<ul class="list-group">
-											<li class="list-group-item">
-												<s:if test="e.activityType.equals(\"c\")">
-													<s:if test="e.discountType.equals(\"d\")">
-														<span class="badge pull-right" style="background-color:red;">
-															<s:property escape="false" value="e.discountFormat" />折</span>
-														<span class="badge pull-left">折扣价
-															<b style="font-weight: bold;">
-																￥<s:property escape="false" value="e.finalPrice" />
-															</b>
-														</span>
-													</s:if>
-													<s:elseif test="e.discountType.equals(\"r\")">
-	<%-- 													<span class="badge pull-left" style="background-color:red;"> --%>
-														<span class="label label-danger">促销价
-															<b style="font-weight: bold;">
-																￥<s:property escape="false" value="e.finalPrice" />
-															</b>
-														</span>
-													</s:elseif>
-													<s:elseif test="e.discountType.equals(\"s\")">
-														<span class="label label-success">双倍积分</span>
-													</s:elseif>
-												</s:if>
-												<s:elseif test="e.activityType.equals(\"j\")">
-													<span class="badge pull-left" style="background-color:red;">兑换积分:
-														<b style="font-weight: bold;">
-															<s:property escape="false" value="e.exchangeScore" />
-														</b>
-													</span>
-												</s:elseif>
-												<s:elseif test="e.activityType.equals(\"t\")">
-													<span class="badge pull-left" style="background-color:red;">团购价:
-														<b style="font-weight: bold;">
-															<s:property escape="false" value="e.tuanPrice" />
-														</b>
-													</span>
-												</s:elseif>
-												
-							
-												<br>
-												<!-- 活动结束时间显示 -->
-												距离活动结束还剩：<div style="display: inline;" timer="activityEndDateTime" activityEndDateTime="<s:property escape="false" value="e.activityEndDateTime" />"></div>
-												<s:if test="e.maxSellCount!=0">
-													<br>
-													<div>最多购买：<s:property escape="false" value="e.maxSellCount" />件</div>
-												</s:if>
-												<div>会员范围：<s:property escape="false" value="e.accountRange" /></div>
-											</li>
-										</ul>
-									</s:if>
-									<s:else>
-										<ul class="list-group">
-											<li class="list-group-item">
-												活动已经结束！
-											</li>
-										</ul>
-									</s:else>
-								</s:if>
-								<!-- 活动判断，显示HTML END-->
 								
 								<div class="row">
 									<div class="col-xs-12">
 										<div style="font-weight: bold;font-size: 18px;"><s:property escape="false" value="e.name" /></div>
-										市场价：<b style="text-decoration: line-through;font-weight: normal;font-size: 11px;color: #a5a5a5;">
-											￥<s:property escape="false" value="e.price" />
+										
 										</b><br>
-										现价：
+										售价：
 										<s:if test="e.activityID!=null and !e.expire && !e.discountType.equals(\"s\")">
 											<b class="nowPrice" style="text-decoration: line-through;font-weight: bold;">
 										</s:if>
@@ -347,15 +161,6 @@ function defaultProductImg(){
 										</s:else>
 											￥<span id="nowPrice"><s:property escape="false" value="e.nowPrice" /></span>
 										</b><br>
-										
-		<%-- 								宝贝详情：<s:if test="e.isnew.equals(\"y\")"><font style="color: red;">新品</font>|</s:if> --%>
-		<%-- 								<s:if test="e.sale.equals(\"y\")"><font style="color: red;">特价</font>|</s:if> --%>
-		<%-- 								<s:property escape="false" value="e.hit"/>人浏览<br> --%>
-										
-										<s:if test="e.score>0">
-											赠送：<s:property escape="false" value="e.score"/>个积分点<br>
-										</s:if>
-										销量：已售<s:property escape="false" value="e.sellcount"/>件
 										
 									</div>
 								</div>

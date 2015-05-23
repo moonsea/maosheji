@@ -240,7 +240,6 @@
 		<property name="commentTypeService" ref="commentTypeServiceFront"></property>
 		<property name="accountRankService" ref="accountRankServiceManage"></property>
 		
-		<property name="hotqueryService" ref="hotqueryServiceManage"></property>
 	</bean>
 	
 </beans>

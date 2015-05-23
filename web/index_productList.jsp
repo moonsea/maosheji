@@ -15,12 +15,6 @@ String queryType = request.getParameter("queryType");
 String _indexProductList_title = null;
 if(StringUtils.isBlank(queryType)){
 	throw new NullPointerException("queryType is null");
-}else if(queryType.equals("hot")){
-	_indexProductList_title = "热门商品";
-	request.setAttribute("_indexProductList_productList", SystemManager.hotProducts);
-}else if(queryType.equals("sale")){
-	_indexProductList_title = "特价商品";
-	request.setAttribute("_indexProductList_productList", SystemManager.saleProducts);
 }else if(queryType.equals("newest")){
 	_indexProductList_title = "最新商品";
 	request.setAttribute("_indexProductList_productList", SystemManager.newProducts);
