@@ -71,7 +71,6 @@ function defaultProductImg(){
 			<div class="col-xs-3" style="margin-top: -15px;">
 				<%@ include file="/catalog_superMenu.jsp"%>
 				</br>
-				<%@ include file="productlist_left_picScroll.jsp"%>
 			</div>
 			<div class="col-xs-9">
 				<!-- 导航栏 -->

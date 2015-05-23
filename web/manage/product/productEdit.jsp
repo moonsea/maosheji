@@ -133,17 +133,7 @@ background-color: #d1d1d1;display: none;height: 30px;z-index: 9999;font-size: 18
 									data-rule="商品简介;required;introduce;length[4~500];"/>
 								</td>
 							</tr>
-		<!-- 					<tr> -->
-		<!-- 						<td style="text-align: right;">大图</td>    -->
-		<!-- 						<td style="text-align: left;" colspan="3"> -->
-		<!-- 							<input type="button" id="max_filemanager" value="浏览服务器" class="btn btn-warning"/> -->
-		<%-- 							<s:textfield type="text" id="maxPicture" name="e.maxPicture" style="width: 600px;" readonly="true"  --%>
-		<%-- 							data-rule="大图;required;maxPicture;"/> --%>
-		<%-- 							<a target="_blank" href="<%=SystemManager.systemSetting.getImageRootPath()%>/..<s:property value="e.maxPicture" />"> --%>
-		<%-- 								<img style="max-width: 50px;max-height: 50px;" alt="" src="<%=SystemManager.systemSetting.getImageRootPath()%>/..<s:property value="e.maxPicture" />"> --%>
-		<!-- 							</a> -->
-		<!-- 						</td> -->
-		<!-- 					</tr> -->
+		 			
 							<tr>
 								<td style="text-align: right;">主图</td>   
 								<td style="text-align: left;" colspan="3">
@@ -157,6 +147,7 @@ background-color: #d1d1d1;display: none;height: 30px;z-index: 9999;font-size: 18
 									</s:if>
 								</td>
 							</tr>
+							
 							<tr>
 								<td style="text-align: right;">定价</td>
 								<td style="text-align: left;"><s:textfield name="e.price" data-rule="定价;required;price;" size="10" maxlength="10"
@@ -433,6 +424,7 @@ function catalogChange(obj){
 
 <script charset="utf-8" src="<%=request.getContextPath() %>/resource/kindeditor-4.1.7/kindeditor-min.js"></script>
 <script charset="utf-8" src="<%=request.getContextPath() %>/resource/kindeditor-4.1.7/lang/zh_CN.js"></script>
+
 <script>
 	var editor;
 	KindEditor.ready(function(K) {
@@ -483,6 +475,9 @@ function catalogChange(obj){
 
 <script>
 KindEditor.ready(function(K) {
+	//var editor = K.editor({
+	//	fileManagerJson : "../resource/kindeditor-4.1.7/jsp/upload_json.jsp"
+//});
 	var editor = K.editor({
 		fileManagerJson : '<%=request.getContextPath() %>/resource/kindeditor-4.1.7/jsp/file_manager_json.jsp'
 	});

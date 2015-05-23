@@ -49,7 +49,9 @@ public class OSSFileManagerJson {
 		//String rootPath = null;//pageContext.getServletContext().getRealPath("/") + "attached/";
 		String rootPath = "attached/";//pageContext.getServletContext().getRealPath("/") + "attached/";
 		//根目录URL，可以指定绝对路径，比如 http://www.yoursite.com/attached/
-		String rootUrl  = systemSetting.getImageRootPath()+"/attached/";//request.getContextPath() + "/attached/";
+		//String rootUrl  = systemSetting.getImageRootPath()+"/attached/";//request.getContextPath() + "/attached/";
+		String rootUrl  = request.getContextPath() + "/attached/";
+		//System.out.println(rootUrl);
 		rootPath = rootUrl;
 		//图片扩展名
 		String[] fileTypes = new String[]{"gif", "jpg", "jpeg", "png", "bmp"};
@@ -63,6 +65,7 @@ public class OSSFileManagerJson {
 			}
 			rootPath += dirName + "/";
 			rootUrl += dirName + "/";
+			System.out.println(rootPath);
 			File saveDirFile = new File(rootPath);
 			if (!saveDirFile.exists()) {
 				saveDirFile.mkdirs();
