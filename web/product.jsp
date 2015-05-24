@@ -150,7 +150,7 @@ function defaultProductImg(){
 								<div class="row">
 									<div class="col-xs-12">
 										<div style="font-weight: bold;font-size: 18px;"><s:property escape="false" value="e.name" /></div>
-										
+										<s:if test="e.catalogID!='30' and e.catalogID!='87'">
 										</b><br>
 										售价：
 										<s:if test="e.activityID!=null and !e.expire && !e.discountType.equals(\"s\")">
@@ -160,7 +160,10 @@ function defaultProductImg(){
 											<b class="nowPrice" style="font-weight: bold;">
 										</s:else>
 											￥<span id="nowPrice"><s:property escape="false" value="e.nowPrice" /></span>
-										</b><br>
+										</b>
+										</s:if>
+										
+										<br>
 										
 									</div>
 								</div>
@@ -195,7 +198,8 @@ function defaultProductImg(){
 										</dl>
 									</div>
 								</s:if>
-								
+
+								<s:if test="e.catalogID!='30' and e.catalogID!='87'">
 								<s:form action="/product/buyNow.html" namespace="/" method="post" theme="simple">
 									<div class="row" style="margin-bottom: 10px;">
 										<div class="col-xs-12">
@@ -246,6 +250,7 @@ function defaultProductImg(){
 										</div>
 									</div>
 								</s:form>
+								</s:if>
 								<br>
 								<%application.setAttribute("qqHelpHtml", ss2.getQqHelpHtml()); %>
 								<s:property escape="false" value="#application.qqHelpHtml"/>
