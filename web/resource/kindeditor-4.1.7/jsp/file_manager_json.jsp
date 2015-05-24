@@ -1,5 +1,4 @@
 <%@page import="maosheji.core.front.SystemManager"%>
-<%@page import="maosheji.core.oss.OSSFileManagerJson"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="maosheji.core.ManageContainer"%>
 <%@page import="maosheji.services.front.systemSetting.bean.SystemSetting"%>
@@ -20,11 +19,7 @@
 boolean oss = false;
 if(oss){
 	
-	OSSFileManagerJson ossManager = new OSSFileManagerJson();
-	String json = ossManager.write(request,response);
-	response.setContentType("application/json; charset=UTF-8");
-	System.out.println("json="+json);
-	out.println(json);
+	
 }else{
 	
 	SystemSetting systemSetting = SystemManager.systemSetting;

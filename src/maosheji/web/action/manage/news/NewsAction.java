@@ -252,32 +252,6 @@ public class NewsAction extends BaseAction<News> {
 	 * @return
 	 * @throws Exception
 	 */
-//	public String selectList0() throws Exception {
-//		/**
-//		 * 由于prepare方法不具备一致性，加此代码解决init=y查询的时候条件不被清除干净的BUG
-//		 */
-//		this.initPageSelect();
-//		e.setType(this.type);/////////////////
-//		
-//		int offset = 0;//分页偏移量
-//		if (getRequest().getParameter("pager.offset") != null) {
-//			offset = Integer
-//					.parseInt(getRequest().getParameter("pager.offset"));
-//		}
-//		if (offset < 0)
-//			offset = 0;
-//		((PagerModel) getE()).setOffset(offset);
-//		pager = getServer().selectPageList(getE());
-//		if(pager==null)pager = new PagerModel();
-//		// 计算总页数
-//		pager.setPagerSize((pager.getTotal() + pager.getPageSize() - 1)
-//				/ pager.getPageSize());
-//		
-//		selectListAfter();
-//		
-//		return toList;
-//	}
-	
 	/**
 	 * 检查文章code的唯一性
 	 * @return
@@ -289,12 +263,6 @@ public class NewsAction extends BaseAction<News> {
 		if(StringUtils.isBlank(e.getCode())){
 			throw new NullPointerException("参数不能为空！");
 		}
-//		logger.error("wait...10s");
-//		try {
-//			Thread.sleep(10*1000L);
-//		} catch (InterruptedException e1) {
-//			e1.printStackTrace();
-//		}
 		
 		int c = newsService.selectCount(e);
 		getResponse().setCharacterEncoding("utf-8");
