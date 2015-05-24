@@ -47,15 +47,6 @@ import com.aliyun.openservices.oss.model.ObjectMetadata;
  */
 public class OSSObjectSample {
 	private static final Logger logger = LoggerFactory.getLogger(OSSObjectSample.class);
-//    private static final String ACCESS_ID = SystemManager.getInstance().get("ACCESS_ID");
-//    private static final String ACCESS_KEY = SystemManager.getInstance().get("ACCESS_KEY");
-//    private static final String OSS_ENDPOINT = SystemManager.getInstance().get("OSS_ENDPOINT");
-//    private static final String bucketName =  SystemManager.getInstance().get("bucketName");
-
-//    private static final String ACCESS_ID = SystemManager.aliyunOSS.getACCESS_ID();
-//    private static final String ACCESS_KEY = SystemManager.aliyunOSS.getACCESS_KEY();
-//    private static final String OSS_ENDPOINT = SystemManager.aliyunOSS.getOSS_ENDPOINT();
-//    private static final String bucketName =  SystemManager.aliyunOSS.getBucketName();
     public static Object lock = new Object();
     
     /**
@@ -82,30 +73,6 @@ public class OSSObjectSample {
 
 	private static void save0(String filePath, File file)
 			throws FileNotFoundException {
-//		if(SystemManager.aliyunOSS==null){
-//    		logger.error("阿里云存储未被启用");
-//    		return;
-//    	}
-    	
-//    	logger.error("filePath="+filePath);
-//    	System.out.println("filePath="+filePath);
-//    	// 可以使用ClientConfiguration对象设置代理服务器、最大重试次数等参数。
-//        ClientConfiguration config = new ClientConfiguration();
-//        OSSClient client = new OSSClient(SystemManager.aliyunOSS.getOSS_ENDPOINT(), SystemManager.aliyunOSS.getACCESS_ID(), SystemManager.aliyunOSS.getACCESS_KEY(), config);
-//
-//        ensureBucket(client, SystemManager.aliyunOSS.getBucketName());
-//        setBucketPublicReadable(client, SystemManager.aliyunOSS.getBucketName());
-//        // 获取Object，返回结果为OSSObject对象
-//        logger.error("bucketName=" + SystemManager.aliyunOSS.getBucketName());
-//        OSSObject object = client.getObject(SystemManager.aliyunOSS.getBucketName(), "attached/");
-//        
-//        // 获取Object的输入流
-//        InputStream objectContent = object.getObjectContent();
-//        System.out.println(objectContent);
-//        System.out.println("正在上传...");
-////            fileName = System.currentTimeMillis() + "." +getExtensionName(fileName);
-//        String url = uploadFile(client, SystemManager.aliyunOSS.getBucketName(), filePath, file);
-//        System.out.println("上传成功！url="+url);
 	}
     
     /*
@@ -128,14 +95,6 @@ public class OSSObjectSample {
      * @param args
      */
     public static void main(String[] args)throws Exception {
-//    	String key = "favicon.png";
-//    	String uploadFilePath = "E:/favicon.png";
-//    	if(1==1){
-//    		save(key, new File(uploadFilePath));
-//    		return;
-//    	}
-    	
-//        String downloadFilePath = "E:/拍大师作品.avi";
         String ACCESS_ID = "xx";
         String OSS_ENDPOINT="http://oss.aliyuncs.com/";
         String ACCESS_KEY="xx";
@@ -176,15 +135,6 @@ public class OSSObjectSample {
             for (String commonPrefix : list.getCommonPrefixes()) {
                 System.out.println(commonPrefix);
             }
-//            System.out.println("正在下载...");
-//            downloadFile(client, bucketName, key, downloadFilePath);
-            
-            // 设置URL过期时间为1小时
-//            Date expiration = new Date(new Date().getTime() + 3600 * 1000);
-
-            // 生成URL
-//            URL url = client.generatePresignedUrl
-//            System.out.println("url="+url);
         } catch(OSSException e){ 
         	e.printStackTrace();
         	if(e.getErrorCode().equals("NoSuchKey")){
@@ -244,9 +194,6 @@ public class OSSObjectSample {
         objectMeta.setContentType("image/jpeg");
 
         InputStream input = new FileInputStream(file);
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-//        String ymd = sdf.format(new Date());
-//        String path = "attached/"+ymd+"/"+key;
         client.putObject(bucketName, filePath, input, objectMeta);
         
         return "http://"+bucketName+".oss.aliyuncs.com/"+filePath;
