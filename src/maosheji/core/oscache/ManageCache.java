@@ -38,6 +38,11 @@ public class ManageCache {
 	private CommentService commentService;
 	private AreaService areaService;
 	private TaskService taskService;
+//	private OssService ossService;
+//	
+//	public void setOssService(OssService ossService) {
+//		this.ossService = ossService;
+//	}
 
 	public void setTaskService(TaskService taskService) {
 		this.taskService = taskService;
@@ -88,7 +93,88 @@ public class ManageCache {
 		
 		logger.error("SystemManager.ordersReport = " + SystemManager.ordersReport.toString());
 	}
-
+	
+//	/**
+//	 * 加载省市区数据
+//	 */
+//	private void loadArea(){
+//		logger.error("loadArea...");
+//		Area area = new Area();
+//		area.setPcode("0");
+//		List<Area> rootData = areaService.selectList(area);
+//		if(rootData==null){
+//			return ;
+//		}
+//		
+//		for(int i=0;i<rootData.size();i++){
+//			Area item = rootData.get(i);
+//			getAreaByDigui2(item);
+//		}
+//		
+//		Map<String, Area> map = new TreeMap<String, Area>();
+//		for(int i=0;i<rootData.size();i++){
+//			Area item = rootData.get(i);
+//			map.put(item.getCode(), item);
+//		}
+//		
+//		SystemManager.areaMap = map;
+//		
+////		logger.error("SystemManager.areaMap=="+SystemManager.areaMap);
+//		
+//		String json = JSON.toJSONString(SystemManager.areaMap);
+////		logger.error("json="+json);
+//		try {
+//			//写到文件
+//			File file = new File("__area.txt");
+//			logger.error(file.getAbsolutePath());
+//			FileUtils.writeStringToFile(new File("__area.json"), json, "utf-8");
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//	}
+	
+//	private void readJsonArea(){
+//		long start = System.currentTimeMillis();
+//		try {
+//			String path = ManageCache.class.getResource("/").getPath();
+//			logger.error("path = " + path);
+//			File file = new File(path + "__area.json");
+//			logger.error(file.getAbsolutePath());
+//			List<String> list = FileUtils.readLines(file, "utf-8");
+//			logger.error("list.size()="+list.size());
+//			
+//			SystemManager.areaMap = JSON.parseObject(list.get(0),new TypeReference<Map<String,Area>>(){});
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		
+//		logger.error("readJsonArea time = " + (System.currentTimeMillis() - start));
+//	}
+	
+	/**
+	 * 加载云存储配置信息
+	 */
+//	public void loadOSS() {
+//		Oss oss = new Oss();
+//		oss.setStatus(Oss.oss_status_y);
+//		oss.setCode(Oss.code_aliyun);
+//		
+//		oss = ossService.selectOne(oss);
+//		if(oss!=null){
+//			if(oss.getCode().equals(Oss.code_aliyun)){
+//				if(StringUtils.isBlank(oss.getOssJsonInfo())){
+//					throw new NullPointerException("阿里云存储配置不能为空！");
+//				}
+//				AliyunOSS aliyunOSS = JSON.parseObject(oss.getOssJsonInfo(), AliyunOSS.class);
+//				if(aliyunOSS==null){
+//					throw new NullPointerException("阿里云配置不正确，请检查！");
+//				}
+//				SystemManager.aliyunOSS = aliyunOSS;
+//			}
+//		}else{
+//			SystemManager.aliyunOSS = null;
+//		}
+//	}
 	
 	/**
 	 * 加载定时任务列表
@@ -111,7 +197,9 @@ public class ManageCache {
 	public void loadAllCache() throws Exception {
 		logger.error("ManageCache.loadAllCache...");
 		loadOrdersReport();
+//		readJsonArea();
 		loadTask();
+//		loadOSS();
 		logger.error("后台缓存加载完毕!");
 	}
 
