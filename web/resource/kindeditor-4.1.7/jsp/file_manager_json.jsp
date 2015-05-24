@@ -98,13 +98,13 @@ if(oss){
 				String fileExt = fileName.substring(fileName.lastIndexOf(".") + 1).toLowerCase();
 				
 				String _fileName = fileName.substring(0,fileName.lastIndexOf("."));
-				String fileNameA = _fileName.split("_")[1];
+				//String fileNameA = _fileName.split("_")[1];
 				//System.out.println("fileNameA="+fileNameA);
 				
-				if(fileNameA.equals("1") || fileNameA.equals("2")){
+				//if(fileNameA.equals("1") || fileNameA.equals("2")){
 				//if(addFileMap.get(fileNameA)!=null){
-					continue;
-				}
+					//continue;
+				//}
 				//addFileMap.put(fileNameA, fileNameA);
 				
 				hash.put("is_dir", false);
