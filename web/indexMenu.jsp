@@ -148,10 +148,10 @@ body{
       <div class="container">
         <div class="navbar-header col-xs-3" style="text-align: center;" id="navbar-header">
 	          	<s:if test="#session.selectMenu==''">
-					<a class="navbar-brand" href="<%=SystemManager.systemSetting.getWww()%>" style="font-weight: bold;margin-left: 5px;">全部商品分类</a>
+					<a class="navbar-brand" href="/maosheji" style="font-weight: bold;margin-left: 5px;">全部商品分类</a>
 				</s:if>
 				<s:else>
-					<a class="navbar-brand" href="<%=SystemManager.systemSetting.getWww()%>" style="font-weight: bold;margin-left: 5px;">全部商品分类</a>
+					<a class="navbar-brand" href="/maosheji" style="font-weight: bold;margin-left: 5px;">全部商品分类</a>
 				</s:else>
 	          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
 	            <span class="icon-bar"></span>
@@ -177,10 +177,10 @@ body{
 	          		%>
 	          		<!-- 首页 -->
 	          		<s:if test="0==#session.selectMenu">
-						<li class="active"><a href="<%=SystemManager.systemSetting.getWww()%>"><b>首页</b></a></li>
+						<li class="active"><a href="/maosheji"><b>首页</b></a></li>
 					</s:if>
 					<s:else>
-						<li><a href="<%=SystemManager.systemSetting.getWww()%>"><b>首页</b></a></li>
+						<li><a href="/maosheji"><b>首页</b></a></li>
 					</s:else>
 					<!-- 类别作为菜单显示 -->
 	          		<s:iterator value="#application.catalogs" status="i" var="row">

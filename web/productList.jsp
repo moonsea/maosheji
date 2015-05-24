@@ -235,6 +235,7 @@ function defaultProductImg(){
 										</div>
 									</div>
 								</div>
+										<s:if test="catalogID!='30' and catalogID!='87'">
 								<div class="row">
 									<div class="col-xs-6">
 										<b style="font-weight: bold;color: #cc0000;">
@@ -247,6 +248,7 @@ function defaultProductImg(){
 										</b>
 									</div>
 								</div>
+								</s:if>
 							</div>
 						</div>
 					</s:iterator></div>

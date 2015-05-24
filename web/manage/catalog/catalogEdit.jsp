@@ -61,6 +61,13 @@
 			<s:else>
 				<tr>
 			</s:else>
+
+				<tr style="display:none;">
+					<td style="text-align: right;">目录类别</td>
+					<td style="text-align: left;">
+						<s:select list="#{'p':'猫品','a':'猫舍'}" id="type" name="e.type" listKey="key" listValue="value"  />
+					</td>
+				</tr>
 				<td style="text-align: right;">大类</td>
 				<td style="text-align: left;">
 <!-- 							<input id="cc" class="easyui-combotree"  -->
@@ -116,17 +123,15 @@
 						id="order1" /></td>
 			</tr>
 			
-			<s:if test="e.type!=null and e.type.equals(\"p\") or e.type.equals(\"a\")">
+			
 				<tr>
 					<td style="text-align: right;">是否在导航条显示</td>
 					<td style="text-align: left;">
 						<s:select list="#{'n':'否','y':'是'}" id="showInNav" name="e.showInNav" listKey="key" listValue="value"  />
 					</td>
 				</tr>
-			</s:if>
 			
 			<tr>
-				<td style="display:none;"><s:textfield name="e.type" value="p"></s:textfield></td>
 				<td colspan="2" style="text-align: center;"><s:if test="e.id=='' or e.id==null">
 						
 						<button method="catalog!insert.action" class="btn btn-success">

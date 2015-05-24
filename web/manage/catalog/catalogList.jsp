@@ -135,11 +135,7 @@
 				<th data-options="field:'order1'" nowrap="nowrap">顺序</th>
 				<th data-options="field:'code'" nowrap="nowrap">编码</th>
 				<th data-options="field:'showInNavStr'" nowrap="nowrap">是否在导航条显示</th>
-				<s:if test="e.type.equals(\"a\")">
-				</s:if>
-				<s:else>
-					<th data-options="field:'productNum'" nowrap="nowrap" align="right">商品数量</th>
-				</s:else>
+			
 			</tr>
 		</thead>
 	</table>
