@@ -3,7 +3,6 @@
 <%@page import="org.slf4j.Logger"%>
 <%@page import="org.slf4j.LoggerFactory"%>
 <%@page import="maosheji.core.util.ImageUtils"%>
-<%@page import="maosheji.core.oss.OSSObjectSample"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="maosheji.services.front.systemSetting.bean.SystemSetting"%>
 <%@page import="maosheji.core.ManageContainer"%>

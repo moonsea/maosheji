@@ -32,13 +32,13 @@
 				    <div class="col-lg-6">
 				    	<label class="radio-inline" style="padding-left: 0px;">
 				    		<s:property value="#session.user_info.nickname"/>
-				    		<s:if test="#session.user_info.accountType==null">(<s:property value="#session.user_info.account"/>)</s:if>
+				    		<%--<s:if test="#session.user_info.accountType==null">(<s:property value="#session.user_info.account"/>)</s:if>
 				    		
 				    		<s:if test="#session.user_info.accountType==null"></s:if>
-				    		<s:elseif test="#session.user_info.accountType.equals(\"qq\")">(QQ登陆)</s:elseif>
+				    		 <s:elseif test="#session.user_info.accountType.equals(\"qq\")">(QQ登陆)</s:elseif>
 				    		<s:elseif test="#session.user_info.accountType.equals(\"sinawb\")">(新浪微博)</s:elseif>
 				    		<s:elseif test="#session.user_info.accountType.equals(\"alipay\")">(支付宝快捷)</s:elseif>
-				    	</label>
+				    	</label> --%>
 				    </div>
 				  </div>
 				  <div class="form-group">
